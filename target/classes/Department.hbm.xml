@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-8-16 23:31:13 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.lxj.employee.domain.Department" table="DEPARTMENT">
+        <id name="did" type="java.lang.Integer">
+            <column name="DID" />
+            <generator class="native" />
+        </id>
+        <property name="dname" type="java.lang.String">
+            <column name="DNAME" />
+        </property>
+        <property name="ddesc" type="java.lang.String">
+            <column name="DDESC" />
+        </property>
+        <set name="employees" table="EMPLOYEE" inverse="false" lazy="true">
+            <key>
+                <column name="DID" />
+            </key>
+            <one-to-many class="com.lxj.employee.domain.Employee" />
+        </set>
+    </class>
+</hibernate-mapping>
