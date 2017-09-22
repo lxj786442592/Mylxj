@@ -33,11 +33,7 @@ public class Department {
 	public void setEmployees(Set<Employee> employees) {
 		this.employees = employees;
 	}
-	@Override
-	public String toString() {
-		return "Department [did=" + did + ", dname=" + dname + ", ddesc=" + ddesc + ", employees=" + employees + "]";
-	}
-	
+
 	
 	
 }
